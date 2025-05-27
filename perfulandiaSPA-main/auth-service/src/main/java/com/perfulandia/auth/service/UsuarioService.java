@@ -2,11 +2,12 @@ package com.perfulandia.auth.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.perfulandia.auth.entity.Usuario;
 import com.perfulandia.auth.repository.UsuarioRepository;
 
-
+@Service
 public class UsuarioService {
 
 

@@ -1,0 +1,5 @@
+com\perfulandia\auth\entity\Usuario.class
+com\perfulandia\auth\repository\UsuarioRepository.class
+com\perfulandia\auth\AuthServiceApplication.class
+com\perfulandia\auth\controller\UsuarioController.class
+com\perfulandia\auth\service\UsuarioService.class

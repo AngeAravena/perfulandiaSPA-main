@@ -11,6 +11,6 @@ public class AuthServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(AuthServiceApplication.class, args);
         // Inicia la aplicación Spring Boot
-        System.out.println("Microservicio: GESTIÓN DE USUARIOS: USUARIOS Y AUTENTICACIÓN\nrunning...");
+        System.out.println("Microservicio: GESTIÓN USUARIOS Y AUTENTICACIÓN\nrunning on port 8080...");
     }
 }

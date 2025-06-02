@@ -20,7 +20,7 @@ public class UsuarioService {
     }
 
     public Usuario guardarUsuario(Usuario usuario) {
-                if (usuarioRepository.existsByEmail(usuario.getEmail())) {
+                if (usuarioRepository.existsByEmailContainingIgnoreCase(usuario.getEmail())) {
             throw new IllegalArgumentException("Ya existe un usuario con ese email");
         }else{
                 // Solo si el usuario no existe, lo guardamos
@@ -30,12 +30,9 @@ public class UsuarioService {
 
     }
 
-        // Actualiza usuario por id
-        // compara el id existente con el id del nuevo usuario
-        // si no son iguales o no existe el id en la tabla, lanza una excepción
     public Usuario actualizarUsuario(Long id, Usuario nuevoUsuario) {
         Usuario usuarioExistente = usuarioRepository.findById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado o no existe"));
+            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado o no existente"));
 
         usuarioExistente.setNombre(nuevoUsuario.getNombre());
         usuarioExistente.setApellido(nuevoUsuario.getApellido());

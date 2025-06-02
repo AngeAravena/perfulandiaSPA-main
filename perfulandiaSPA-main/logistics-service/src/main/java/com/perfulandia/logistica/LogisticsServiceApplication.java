@@ -10,7 +10,7 @@ public class LogisticsServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LogisticsServiceApplication.class, args);
-		System.out.println("Microservicio: LOGÍSTICA Y PEDIDOS\nrunning...");
+		System.out.println("Microservicio: LOGÍSTICA Y PEDIDOS\nrunning on port 8081...");
 	}
 
 	@Bean

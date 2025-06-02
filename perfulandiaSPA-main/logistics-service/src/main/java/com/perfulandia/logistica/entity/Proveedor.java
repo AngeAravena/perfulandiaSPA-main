@@ -1,4 +1,4 @@
-package com.perfulandia.logistica.model;
+package com.perfulandia.logistica.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.perfulandia.logistica.model.Proveedor;
+import com.perfulandia.logistica.entity.Proveedor;
 import com.perfulandia.logistica.repository.ProveedorRepository;
 
 @Service

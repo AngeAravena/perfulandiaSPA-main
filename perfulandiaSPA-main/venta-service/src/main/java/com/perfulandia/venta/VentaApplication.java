@@ -8,6 +8,7 @@ public class VentaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(VentaApplication.class, args);
+		System.out.println("Microservicio: VENTAS\nrunning on port 8083...");
 	}
 
 }

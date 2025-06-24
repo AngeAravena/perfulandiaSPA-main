@@ -6,8 +6,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Envio {
 
     @Id
@@ -17,55 +27,23 @@ public class Envio {
     private String direccionDestino;
     private LocalDateTime fechaEnvio;
     private String estadoEnvio; //"Enviado", "En tránsito", "Entregado"
-    private String proveedor; // Nombre del proveedor de envío
-    private Long usuarioId; // ID del cliente asociado al envío
 
-    public Long getId() {
-        return Id;
+    @PrePersist
+    public void asignarFechaEnvio() {
+        this.fechaEnvio = LocalDateTime.now();
     }
 
-    public void setId(Long Id) {
-        this.Id = Id;
+    @PreUpdate
+    public void actualizarFechaEnvio() {
+        this.fechaEnvio = LocalDateTime.now();
     }
 
-    public String getDireccionDestino() {
-        return direccionDestino;
-    }
+    @ManyToOne
+    @JoinColumn(name = "proveedor_id")
+    private Proveedor proveedor;
 
-    public void setDireccionDestino(String direccionDestino) {
-        this.direccionDestino = direccionDestino;
-    }
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
-    public LocalDateTime getFechaEnvio() {
-        return fechaEnvio;
-    }
-
-    public void setFechaEnvio(LocalDateTime fechaEnvio) {
-        this.fechaEnvio = fechaEnvio;
-    }
-
-    public String getEstadoEnvio() {
-        return estadoEnvio;
-    }
-
-    public void setEstadoEnvio(String estadoEnvio) {
-        this.estadoEnvio = estadoEnvio;
-    }
-
-    public String getProveedor() {
-        return proveedor;
-    }
-
-    public void setProveedor(String proveedor) {
-        this.proveedor = proveedor;
-    }
-
-    public Long getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
-    }
-   
 }

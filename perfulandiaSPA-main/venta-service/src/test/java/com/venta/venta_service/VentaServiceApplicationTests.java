@@ -1,10 +1,10 @@
-package com.perfulandia.venta;
+package com.venta.venta_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VentaApplicationTests {
+class VentaServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

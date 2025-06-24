@@ -1,0 +1,10 @@
+{
+  "producto": { "id": 1 },
+  "usuario": { "id": 2 },
+  "envio": { "id": 3 },
+  "cantidad": 1,
+  "total": 1000.0,
+  "precio": 1000.0,
+  "estado": "Pagado",
+  "fechaVenta": "2025-06-24T12:00:00"
+}

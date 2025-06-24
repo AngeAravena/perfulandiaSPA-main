@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.0</version>
+		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.perfulandia</groupId>
-	<artifactId>venta</artifactId>
+	<groupId>com.venta</groupId>
+	<artifactId>venta-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>venta</name>
-	<description>Demo project for Spring Boot</description>
+	<name>venta-service</name>
+	<description>microservicio venta</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -33,6 +33,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

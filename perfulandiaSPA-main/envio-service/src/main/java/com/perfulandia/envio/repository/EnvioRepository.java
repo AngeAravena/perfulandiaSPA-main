@@ -1,23 +1,23 @@
 package com.perfulandia.envio.repository;
 
+import com.perfulandia.envio.entity.Envio;
+import com.perfulandia.envio.entity.Proveedor;
+import com.perfulandia.envio.entity.Usuario;
 import java.time.LocalDateTime;
-import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.perfulandia.envio.entity.Envio;
+import java.util.List;
 
 public interface EnvioRepository extends JpaRepository<Envio, Long> {
+
     
-    //metodo buscar envio por estado
+    List<Envio> findByProveedor(Proveedor proveedor);
+    
     List<Envio> findByEstadoEnvio(String estadoEnvio);
     
-    // Método buscar envíos por proveedor
-    List<Envio> findByProveedor(String proveedor);
     
-    // Método buscar envíos por cliente
-    List<Envio> findByUsuarioId(Long usuarioId);
-    
-    // Método buscar envíos por fecha de envío
-    List<Envio> findByFechaEnvioBetween(LocalDateTime startDate, LocalDateTime endDate);
+    List<Envio> findByUsuario(Usuario usuario);
+
+    List<Envio> findByFechaEnvioBetween(LocalDateTime start, LocalDateTime end);
+        
 }

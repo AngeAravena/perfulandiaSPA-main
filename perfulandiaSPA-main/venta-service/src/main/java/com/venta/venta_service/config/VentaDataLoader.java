@@ -18,6 +18,9 @@ public class VentaDataLoader {
     @Bean
     public CommandLineRunner loadData(VentaRepository ventaRepository) {
         return args -> {
+
+        ventaRepository.deleteAll();
+        
             Faker faker = new Faker();
 
             for (int i = 0; i < 10; i++) {
